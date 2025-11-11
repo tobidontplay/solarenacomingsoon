@@ -31,30 +31,30 @@ export default function Landing() {
       {/* Content */}
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="container mx-auto px-6 pt-20 pb-16">
+        <section className="container mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-12 sm:pb-16">
           {/* Logo */}
-          <div className="flex justify-center mb-12 animate-fade-in">
+          <div className="flex justify-center mb-8 sm:mb-12 animate-fade-in">
             <img 
               src="/fulllogo.png" 
               alt="SolArena Logo" 
-              className="w-64 h-64 object-contain drop-shadow-neon-purple hover:scale-105 transition-transform duration-300"
+              className="w-48 h-48 sm:w-64 sm:h-64 object-contain drop-shadow-neon-purple hover:scale-105 transition-transform duration-300"
             />
           </div>
 
           {/* About */}
-          <div className="max-w-3xl mx-auto text-center mb-16 space-y-6">
-            <h1 className="text-5xl md:text-6xl font-display font-bold bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-purple bg-clip-text text-transparent animate-gradient">
+          <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 space-y-4 sm:space-y-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-purple bg-clip-text text-transparent animate-gradient">
               SOLARENA
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground leading-relaxed px-2">
               The first fully on-chain, trustless betting protocol on Solana. Turn every prediction into a verifiable wager.
             </p>
-            <p className="text-lg text-muted-foreground/80">
+            <p className="text-base sm:text-lg text-muted-foreground/80 px-2">
               No bookies. No middlemen. Just code, consensus, and the thrill of being right.
             </p>
 
             {/* Social Links */}
-            <div className="flex justify-center gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 pt-6 max-w-sm sm:max-w-none mx-auto">
               <a
                 href="https://discord.gg/GmG6xrnUm8"
                 target="_blank"
@@ -64,7 +64,7 @@ export default function Landing() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-neon-purple/50 hover:border-neon-purple hover:bg-neon-purple/10 transition-all"
+                  className="border-neon-purple/50 hover:border-neon-purple hover:bg-neon-purple/10 transition-all w-full sm:w-auto"
                 >
                   <MessageCircle className="w-5 h-5 mr-2 group-hover:text-neon-purple transition-colors" />
                   Discord
@@ -80,7 +80,7 @@ export default function Landing() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-neon-cyan/50 hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all"
+                  className="border-neon-cyan/50 hover:border-neon-cyan hover:bg-neon-cyan/10 transition-all w-full sm:w-auto"
                 >
                   <Twitter className="w-5 h-5 mr-2 group-hover:text-neon-cyan transition-colors" />
                   Twitter
@@ -96,7 +96,7 @@ export default function Landing() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-neon-purple/50 hover:border-neon-purple hover:bg-neon-purple/10 transition-all"
+                  className="border-neon-purple/50 hover:border-neon-purple hover:bg-neon-purple/10 transition-all w-full sm:w-auto"
                 >
                   <Send className="w-5 h-5 mr-2 group-hover:text-neon-purple transition-colors" />
                   Telegram
@@ -107,7 +107,7 @@ export default function Landing() {
           </div>
 
           {/* Video Section */}
-          <div className="max-w-5xl mx-auto mb-16">
+          <div className="max-w-5xl mx-auto mb-12 sm:mb-16">
             <div className="relative rounded-2xl overflow-hidden border-2 border-neon-purple/30 shadow-2xl shadow-neon-purple/20 hover:border-neon-cyan/50 transition-all duration-300">
               <div className="absolute inset-0 bg-gradient-to-br from-neon-purple/10 to-neon-cyan/10 pointer-events-none" />
               <video
@@ -134,14 +134,14 @@ export default function Landing() {
 
           {/* Development Progress */}
           <div className="max-w-4xl mx-auto">
-            <div className="bg-card/40 backdrop-blur-xl border border-card-border rounded-2xl p-8 shadow-2xl">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="text-3xl font-display font-bold bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+            <div className="bg-card/40 backdrop-blur-xl border border-card-border rounded-2xl p-4 sm:p-8 shadow-2xl">
+              <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
+                <h2 className="text-2xl sm:text-3xl font-display font-bold bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
                   Development Progress
                 </h2>
-                <div className="text-right">
-                  <div className="text-4xl font-bold text-neon-cyan">{progress}%</div>
-                  <div className="text-sm text-muted-foreground">{completed} of {total} complete</div>
+                <div className="text-center sm:text-right">
+                  <div className="text-3xl sm:text-4xl font-bold text-neon-cyan">{progress}%</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{completed} of {total} complete</div>
                 </div>
               </div>
 
