@@ -116,7 +116,12 @@ export default function Landing() {
                 loop
                 muted
                 playsInline
+                preload="auto"
                 className="w-full h-auto"
+                style={{
+                  imageRendering: 'crisp-edges',
+                  objectFit: 'contain',
+                }}
               >
                 <source src="/demo-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
