@@ -4,7 +4,7 @@ import { Check, ExternalLink, Twitter, MessageCircle, Send } from "lucide-react"
 export default function Landing() {
   const developmentChecklist = [
     { task: "Smart Contract (Anchor/Rust)", status: "complete", category: "Core" },
-    { task: "Treasury System (0.1% + 1.5% fees)", status: "complete", category: "Core" },
+    { task: "Treasury System", status: "complete", category: "Core" },
     { task: "Dual Resolution (Arbiter + Oracle)", status: "complete", category: "Core" },
     { task: "Pyth Oracle Integration", status: "complete", category: "Core" },
     { task: "Frontend UI (React + Tailwind)", status: "complete", category: "Frontend" },
