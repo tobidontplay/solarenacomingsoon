@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { Check, ExternalLink, Twitter, MessageCircle, Send } from "lucide-react";
-import { Link } from "wouter";
 
 export default function Landing() {
   const developmentChecklist = [
@@ -132,17 +131,6 @@ export default function Landing() {
             </p>
           </div>
 
-          {/* CTA */}
-          <div className="flex justify-center mb-20">
-            <Link href="/dashboard">
-              <Button 
-                size="lg"
-                className="text-lg px-8 py-6 bg-gradient-to-r from-neon-purple to-neon-cyan hover:shadow-neon-purple transition-all duration-300 hover:scale-105"
-              >
-                Enter The Arena
-              </Button>
-            </Link>
-          </div>
 
           {/* Development Progress */}
           <div className="max-w-4xl mx-auto">
