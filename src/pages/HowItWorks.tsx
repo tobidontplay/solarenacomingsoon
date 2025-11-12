@@ -17,13 +17,13 @@ export default function HowItWorks({ showJoinModal }: HowItWorksProps) {
             How SolArena Works
           </h1>
           <p className="text-lg text-muted-foreground">
-            Peer-to-peer betting, transparent resolution, and fair payouts — all on-chain.
+            Peer-to-peer prediction markets, transparent resolution, and fair rewards — all settled via smart contracts.
           </p>
         </div>
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">Peer-to-Peer Pool System</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">How Prediction Pools Work</h2>
         <div className="max-w-3xl mx-auto">
           <div className="grid grid-cols-2 gap-4 mb-6">
             <button
@@ -47,21 +47,21 @@ export default function HowItWorks({ showJoinModal }: HowItWorksProps) {
               {activePool === 'yes' ? (
                 <div>
                   <h4 className="text-lg font-bold text-neon-cyan mb-3">YES Pool Explained</h4>
-                  <p className="text-sm text-muted-foreground mb-2">When you bet on YES, your SOL joins the YES pool. If the outcome is YES:</p>
+                  <p className="text-sm text-muted-foreground mb-2">When you stake on YES, your SOL joins the YES pool via smart contract. If the outcome is YES:</p>
                   <ul className="text-sm text-muted-foreground space-y-1 ml-4">
                     <li>• You get your original stake back</li>
                     <li>• You receive a proportional share of the NO pool based on your contribution</li>
-                    <li>• Example: If you staked 10% of the YES pool, you get 10% of the NO pool as profit</li>
+                    <li>• Example: If you staked 10% of the YES pool, you get 10% of the NO pool as rewards</li>
                   </ul>
                 </div>
               ) : (
                 <div>
                   <h4 className="text-lg font-bold text-neon-purple mb-3">NO Pool Explained</h4>
-                  <p className="text-sm text-muted-foreground mb-2">When you bet on NO, your SOL joins the NO pool. If the outcome is NO:</p>
+                  <p className="text-sm text-muted-foreground mb-2">When you stake on NO, your SOL joins the NO pool via smart contract. If the outcome is NO:</p>
                   <ul className="text-sm text-muted-foreground space-y-1 ml-4">
                     <li>• You get your original stake back</li>
                     <li>• You receive a proportional share of the YES pool based on your contribution</li>
-                    <li>• Example: If you staked 10% of the NO pool, you get 10% of the YES pool as profit</li>
+                    <li>• Example: If you staked 10% of the NO pool, you get 10% of the YES pool as rewards</li>
                   </ul>
                 </div>
               )}
@@ -83,7 +83,7 @@ export default function HowItWorks({ showJoinModal }: HowItWorksProps) {
             <div className="bg-card/60 border border-card-border rounded-xl p-6">
               <h3 className="font-bold text-neon-cyan mb-3">Entry Fee: 0.1%</h3>
               <p className="text-sm text-muted-foreground">
-                A small fee is charged when you place a bet. This goes directly to the on-chain Treasury to support development and airdrops.
+                A small fee is charged when you enter a position. This goes directly to the on-chain Treasury to support development and airdrops.
               </p>
             </div>
             <div className="bg-card/60 border border-card-border rounded-xl p-6">
@@ -94,19 +94,19 @@ export default function HowItWorks({ showJoinModal }: HowItWorksProps) {
             </div>
           </div>
           <p className="text-center text-sm text-muted-foreground mt-6">
-            All fees are public and auditable on-chain. SolArena never bets against you.
+            All fees are public and auditable on-chain. SolArena Labs does not operate as a house or bookmaker.
           </p>
         </div>
       </section>
 
       <section className="container mx-auto px-4 sm:px-6 py-16">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">How Bets Are Resolved</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8">How Markets Are Resolved</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card/60 border border-card-border rounded-xl p-6">
               <h3 className="font-bold text-neon-cyan mb-3">🤖 Oracle Mode</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                For price-based bets, we use Pyth Network real-time oracle feeds.
+                For price-based predictions, we use Pyth Network real-time oracle feeds.
               </p>
               <ul className="text-sm text-muted-foreground space-y-1 ml-4">
                 <li>• Fully automated</li>
@@ -117,7 +117,7 @@ export default function HowItWorks({ showJoinModal }: HowItWorksProps) {
             <div className="bg-card/60 border border-card-border rounded-xl p-6">
               <h3 className="font-bold text-neon-purple mb-3">⚔️ Arbiter Mode</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                For community or meme-based bets, a trusted arbiter decides the outcome.
+                For community or meme-based predictions, a trusted arbiter decides the outcome.
               </p>
               <ul className="text-sm text-muted-foreground space-y-1 ml-4">
                 <li>• Human judgment</li>

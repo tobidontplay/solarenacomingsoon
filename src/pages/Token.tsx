@@ -37,10 +37,10 @@ export default function Token({ showJoinModal }: TokenProps) {
                 <Zap className="w-5 h-5" /> How You Earn
               </h3>
               <ul className="space-y-2 text-sm">
-                <li><strong>Join Bets:</strong> Earn points for every wager you place or resolve</li>
-                <li><strong>Create Bets:</strong> Get extra points when others join your wagers</li>
-                <li><strong>Refer Gladiators:</strong> Bring new users and earn a share of their activity points</li>
-                <li><strong>Win Bets:</strong> Victories multiply your points based on pool size and odds</li>
+                <li><strong>Join Markets:</strong> Earn points for every prediction you make or resolve</li>
+                <li><strong>Create Markets:</strong> Get extra points when others join your predictions</li>
+                <li><strong>Refer Users:</strong> Bring new participants and earn a share of their activity points</li>
+                <li><strong>Win Predictions:</strong> Victories multiply your points based on pool size and odds</li>
                 <li><strong>Community Engagement:</strong> Meme drops, event votes, and Discord activity also contribute</li>
               </ul>
             </div>
@@ -52,9 +52,9 @@ export default function Token({ showJoinModal }: TokenProps) {
               <ul className="space-y-2 text-sm">
                 <li>• <strong>Pro Tools Access:</strong> Early access to premium analytics and prediction tools</li>
                 <li>• <strong>Faction Roles:</strong> Distinct Discord roles and badges that flex your on-chain reputation</li>
-                <li>• <strong>Exclusive Bets & Events:</strong> Entry into private or high-stakes arenas</li>
+                <li>• <strong>Exclusive Markets & Events:</strong> Entry into private or high-stakes arenas</li>
                 <li>• <strong>Airdrop Eligibility:</strong> Points will directly influence future reward and token distribution phases</li>
-                <li>• <strong>Referral Multipliers:</strong> The higher your tier, the more you earn from your community's wagers</li>
+                <li>• <strong>Referral Multipliers:</strong> The higher your tier, the more you earn from your community's activity</li>
               </ul>
             </div>
           </div>
@@ -64,8 +64,8 @@ export default function Token({ showJoinModal }: TokenProps) {
               <AlertTriangle className="w-5 h-5" /> Important Notes
             </h4>
             <ul className="text-sm space-y-1">
-              <li>• Arena Points aren't tokens (yet) — they're reputation and contribution metrics that will translate into early benefits once the token and staking systems go live</li>
-              <li>• You can't lose points for losing bets; you only gain them through participation and contribution</li>
+              <li>• Arena Points aren't tokens (yet) — they're on-chain reputation metrics that track your activity and influence within the protocol</li>
+              <li>• You can't lose points for losing predictions; you only gain them through participation and contribution</li>
               <li>• Leaderboards and point logic are fully on-chain and transparent</li>
             </ul>
           </div>

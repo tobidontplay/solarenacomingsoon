@@ -24,10 +24,10 @@ export default function Home({ showJoinModal }: HomeProps) {
             SOLARENA
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground px-2">
-            ⚔️ <strong>Where Speculation Becomes Sport</strong>
+            ⚔️ <strong>Put Your Money Where Your Mouth Is</strong>
           </p>
           <p className="text-base sm:text-lg text-muted-foreground/90 px-2">
-            Create and join peer-to-peer wagers on anything. Token prices. Meme wars. Crypto drama. All settled transparently on-chain.
+            A decentralized prediction protocol where you compete, create markets, and earn Arena Points. Token prices. Meme wars. Crypto drama. All settled transparently on-chain.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-3 pt-4 sm:pt-6 px-4">
@@ -43,32 +43,6 @@ export default function Home({ showJoinModal }: HomeProps) {
         </div>
       </section>
 
-      <hr className="border-card-border max-w-6xl mx-auto" />
-
-      {/* Development Preview Video */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-4 sm:mb-6">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-neon-purple/10 border border-neon-purple/30 mb-3 sm:mb-4">
-              <div className="w-2 h-2 rounded-full bg-neon-purple animate-pulse" />
-              <span className="text-xs sm:text-sm font-medium text-neon-purple">Development Preview</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 px-2">Phase 1: The Arena</h2>
-            <p className="text-sm sm:text-base text-muted-foreground px-4">Interactive demo of our betting platform in development</p>
-          </div>
-          
-          <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border-2 border-neon-purple/30 shadow-2xl bg-black/5 dark:bg-black/20">
-            <video controls playsInline preload="metadata" className="w-full h-auto">
-              <source src="/demo-video.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <p className="text-center text-xs sm:text-sm text-muted-foreground mt-3 sm:mt-4 px-4">
-            💡 Use the video controls to explore the platform features at your own pace
-          </p>
-        </div>
-      </section>
-
       {/* How It Works */}
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 bg-card/20">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">How It Works</h2>
@@ -78,21 +52,21 @@ export default function Home({ showJoinModal }: HomeProps) {
               <Target className="w-8 h-8 text-neon-purple" />
             </div>
             <h3 className="text-lg sm:text-xl font-bold">1. Create</h3>
-            <p className="text-sm text-muted-foreground px-2">Set a bet on any event with custom terms.</p>
+            <p className="text-sm text-muted-foreground px-2">Create a prediction market on any event with custom terms.</p>
           </div>
           <div className="text-center space-y-4">
             <div className="w-16 h-16 mx-auto rounded-full bg-neon-cyan/20 border-2 border-neon-cyan flex items-center justify-center">
               <Coins className="w-8 h-8 text-neon-cyan" />
             </div>
-            <h3 className="text-lg sm:text-xl font-bold">2. Bet</h3>
-            <p className="text-sm text-muted-foreground px-2">Stake SOL on YES or NO. Pools form on-chain.</p>
+            <h3 className="text-lg sm:text-xl font-bold">2. Compete</h3>
+            <p className="text-sm text-muted-foreground px-2">Stake SOL on YES or NO. Pools form directly in smart contracts.</p>
           </div>
           <div className="text-center space-y-4">
             <div className="w-16 h-16 mx-auto rounded-full bg-neon-green/20 border-2 border-neon-green flex items-center justify-center">
               <Check className="w-8 h-8 text-neon-green" />
             </div>
             <h3 className="text-lg sm:text-xl font-bold">3. Resolve</h3>
-            <p className="text-sm text-muted-foreground px-2">Oracles or arbiters settle outcomes. Winners claim payouts.</p>
+            <p className="text-sm text-muted-foreground px-2">Oracles or arbiters settle outcomes on-chain. Winners claim rewards.</p>
           </div>
         </div>
         <div className="text-center mt-6 sm:mt-8 px-4">
@@ -121,7 +95,7 @@ export default function Home({ showJoinModal }: HomeProps) {
           <div className="bg-card/60 border border-card-border rounded-xl p-5 sm:p-6 text-center">
             <Users className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 text-neon-green" />
             <h3 className="text-base sm:text-lg font-bold mb-2">Peer-to-Peer Model</h3>
-            <p className="text-sm text-muted-foreground">We don't bet against you. You bet against other Gladiators.</p>
+            <p className="text-sm text-muted-foreground">No house, no middlemen. You compete directly against other users via smart contracts.</p>
           </div>
         </div>
       </section>

@@ -1,56 +1,56 @@
 export default function FAQ() {
   const faqs = [
     {
-      question: "🧩 What is SolArena?",
-      answer: "SolArena is the first on-chain betting arena on Solana where users create and join yes or no wagers about anything — token prices, meme wars, or crypto drama — all settled transparently on-chain. There are no bookies or middlemen. Just you, the crowd, and the chain."
+      question: "What is SolArena?",
+      answer: "SolArena is a decentralized prediction protocol on Solana. Users create and join peer-to-peer prediction markets on anything — token prices, meme wars, crypto drama — all settled transparently on-chain via smart contracts. No bookmakers, no middlemen. Just you, other users, and the blockchain."
     },
     {
-      question: "💥 How does it work?",
-      answer: "Each bet has two sides: YES and NO. You pick your side, stake your tokens, and when the outcome is decided, the winners split the losing side's pool based on how much they staked. It's peer-to-peer, not house versus player."
+      question: "Is SolArena a gambling site?",
+      answer: "No. SolArena is a decentralized protocol for social predictions. You compete against other users, not a house. All actions happen on-chain through smart contracts, and outcomes are transparent. SolArena Labs does not operate as a bookmaker, casino, or gambling service."
     },
     {
-      question: "🏆 How do I earn in SolArena?",
-      answer: "You earn by winning bets or by creating popular ones that attract volume. You can also collect Arena Points, which boost your airdrop eligibility and unlock premium features once the $ARENA token launches."
+      question: "Are my funds safe?",
+      answer: "Your funds are held in audited smart contracts on Solana. You retain full control — SolArena Labs never has custody of your assets. All transactions are peer-to-peer and verifiable on-chain. Before mainnet launch, contracts will be open-sourced and professionally audited."
     },
     {
-      question: "💎 What are Arena Points?",
-      answer: "Arena Points are your reputation inside SolArena. You earn them by joining, creating, or winning bets, as well as through referrals or community activity. They will directly influence your airdrop rewards and access to upcoming Pro features."
+      question: "What are Arena Points?",
+      answer: "Arena Points are your on-chain reputation score. You earn them by creating markets, making predictions, winning, referring users, and engaging with the community. They're not tokens (yet), but they directly influence your $ARENA airdrop eligibility and unlock Pro features."
     },
     {
-      question: "💰 Are there any fees?",
-      answer: "Yes, but they're small and transparent. There's a 0.1% entry fee on every bet and a 1.5% fee on winnings, only taken when you win. All fees go to the on-chain Treasury, which is public and auditable. SolArena never bets against users. The platform grows with the community."
+      question: "How do fees work?",
+      answer: "There's a 0.1% entry fee when you stake and a 1.5% fee on winnings (only charged if you win). All fees go to the on-chain Treasury, which is public and auditable. These funds support development, liquidity, and community airdrops. SolArena Labs does not take a house edge."
     },
     {
-      question: "⚙️ How is fairness guaranteed?",
-      answer: "Every transaction and payout happens fully on-chain, so results and stakes are public and verifiable. There are two ways to resolve bets: Arbiter Mode for community or meme-based bets decided by trusted figures, and Oracle Mode for price-based bets using Pyth Network feeds."
+      question: "How do I qualify for the $ARENA airdrop?",
+      answer: "Earn Arena Points by participating during Phase 1. The more you create, predict, win, and refer, the higher your airdrop allocation. Snapshots and distribution details will be announced on X and Discord. Early and active users get priority."
     },
     {
-      question: "🧠 What is Phase 1: The Arena?",
-      answer: "Phase 1 launches the core betting experience. Users can create, fund, and resolve bets on-chain while earning Arena Points. It's the foundation for everything that comes next — a place to test your conviction, prove your alpha, and climb the leaderboard before the token launches."
+      question: "How does it work?",
+      answer: "Each prediction market has two sides: YES and NO. You pick your side, stake SOL, and when the outcome is resolved, winners split the losing side's pool proportionally. It's peer-to-peer via smart contracts — no house, no odds manipulation."
     },
     {
-      question: "🪂 Will there be an airdrop?",
-      answer: "Yes. Arena Points earned during Phase 1 will directly affect $ARENA airdrop eligibility. The more you participate, the larger your potential rewards. Snapshots and details will be announced publicly on X and Discord."
+      question: "How are outcomes decided?",
+      answer: "Two ways: Oracle Mode uses Pyth Network real-time price feeds for automated, tamper-proof resolution. Arbiter Mode uses trusted community figures for subjective predictions (memes, events, etc.). All resolutions happen on-chain and are publicly verifiable."
     },
     {
-      question: "🤝 Can creators or communities join early?",
-      answer: "Yes. We're inviting early \"Gladiator\" communities and creators to help shape SolArena. They get custom Discord roles, early access to Pro features, boosted referral rewards, and visibility across our ecosystem. If you run a trading or meme community, reach out to us on X or Discord to collaborate."
+      question: "Can I lose my Arena Points?",
+      answer: "No. You only gain points through participation. Losing a prediction doesn't reduce your score — it's a reputation system, not a penalty system. The goal is to reward activity and skill over time."
     },
     {
-      question: "🪩 What is SolArena Pro?",
-      answer: "Pro Mode is the advanced toolset for top bettors and community leaders. It includes analytics dashboards, community bet creation tools, and future integrations for automated resolution or staking. Early partners and creators will get free access during the launch phase."
+      question: "What is Phase 1: The Arena?",
+      answer: "Phase 1 is the core prediction protocol launch. Users can create markets, stake on outcomes, resolve predictions, and earn Arena Points. It's the foundation for everything — prove your alpha, climb the leaderboard, and secure your $ARENA allocation before the token goes live."
     },
     {
-      question: "🔒 Is SolArena safe?",
-      answer: "SolArena is built with Anchor (Rust) and deployed on Solana, known for speed and low fees. Before full launch, the contracts will be open-sourced and audited for transparency."
+      question: "Can creators or communities partner with SolArena?",
+      answer: "Yes. We're inviting Founding Titans — builders, KOLs, and communities — to shape the protocol. Partners get custom Discord roles, early Pro access, boosted referral rewards, and visibility. If you run a trading or meme community, apply via our Titans page or reach out on X/Discord."
     },
     {
-      question: "🧱 How does SolArena make money?",
-      answer: "The platform earns from a 0.1% entry fee and a 1.5% winnings fee. These funds go directly to the on-chain Treasury to support development, liquidity, and airdrops. The system is built to align with players, not against them."
+      question: "Is this legal in my country?",
+      answer: "SolArena is a decentralized, peer-to-peer protocol. Users interact directly with smart contracts and retain full control of their funds. Participation may be subject to local laws and regulations. Users are responsible for compliance in their jurisdiction. We recommend consulting local legal guidance if unsure."
     },
     {
-      question: "🕹️ How do I get started?",
-      answer: "Connect your Solana wallet (Phantom, Backpack, or Solflare). Create or join a bet. Earn Arena Points as you play. Climb the leaderboard and secure your $ARENA rewards."
+      question: "How do I get started?",
+      answer: "Connect your Solana wallet (Phantom, Backpack, or Solflare). Browse or create a prediction market. Stake SOL on YES or NO. Earn Arena Points as you participate. Climb the leaderboard and secure your $ARENA rewards."
     }
   ];
 

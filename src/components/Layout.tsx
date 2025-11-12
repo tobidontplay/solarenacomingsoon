@@ -162,10 +162,20 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
               </div>
             </div>
 
-            <div className="border-t border-card-border pt-8 text-center space-y-2">
-              <p className="text-sm text-muted-foreground">Built with ⚡ on Solana</p>
-              <p className="text-xs text-muted-foreground/70 italic">"Where speculation becomes sport."</p>
-              <p className="text-xs text-muted-foreground/50"> 2025 SolArena Labs. All rights reserved.</p>
+            <div className="border-t border-card-border pt-8 space-y-4">
+              {/* Legal Disclaimer */}
+              <div className="bg-card/40 border border-card-border/50 rounded-lg p-4 text-center max-w-4xl mx-auto">
+                <p className="text-xs text-muted-foreground/90 leading-relaxed">
+                  <strong className="text-foreground">Legal Disclaimer:</strong> SolArena is a decentralized, peer-to-peer protocol for social prediction markets. Users interact directly with smart contracts and retain full control of their funds. SolArena Labs does not operate as a bookmaker, exchange, or gambling service. Participation may be subject to local laws and regulations. Users are responsible for compliance in their jurisdiction.
+                </p>
+              </div>
+              
+              {/* Footer Credits */}
+              <div className="text-center space-y-2">
+                <p className="text-sm text-muted-foreground">Built with ⚡ on Solana</p>
+                <p className="text-xs text-muted-foreground/70 italic">"Put your money where your mouth is."</p>
+                <p className="text-xs text-muted-foreground/50">© 2025 SolArena Labs. All rights reserved.</p>
+              </div>
             </div>
           </div>
         </footer>

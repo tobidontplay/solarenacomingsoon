@@ -108,7 +108,7 @@ export default function Community({ showJoinModal, showPartnerForm }: CommunityP
         <div className="max-w-3xl mx-auto text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold">Ready to Build Together?</h2>
           <p className="text-lg text-muted-foreground">
-            Join the Arena community or apply as a partner to shape the future of on-chain betting.
+            Join the Arena community or apply as a partner to shape the future of decentralized prediction markets.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Button size="lg" className="bg-gradient-to-r from-neon-purple to-neon-cyan" onClick={showJoinModal}>
