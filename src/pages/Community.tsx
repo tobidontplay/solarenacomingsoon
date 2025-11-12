@@ -13,10 +13,16 @@ export default function Community({ showJoinModal, showPartnerForm }: CommunityP
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <Users className="w-20 h-20 mx-auto text-neon-cyan" />
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-purple bg-clip-text text-transparent">
-            For Builders, Creators & Communities
+            Titans
           </h1>
+          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+            For Builders, Creators & Communities
+          </h2>
           <p className="text-lg text-muted-foreground">
-            We're not paying for shills — we're building the Arena with the people who made Solana culture.
+            We're not paying for shills, we're building the Arena with the people who made Solana culture.
+          </p>
+          <p className="text-lg text-muted-foreground font-semibold">
+            Join as a Founding Titan and get exclusive perks to empower your community.
           </p>
         </div>
       </section>
@@ -24,11 +30,14 @@ export default function Community({ showJoinModal, showPartnerForm }: CommunityP
       <section className="container mx-auto px-4 sm:px-6 py-16">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-neon-purple/20 to-neon-cyan/20 border-2 border-neon-purple rounded-2xl p-8 sm:p-12 mb-12">
+            <div className="inline-block px-4 py-2 rounded-full bg-neon-cyan/20 border border-neon-cyan/40 text-neon-cyan text-sm font-bold mb-6">
+              10 Slots Available
+            </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6">
-              Join as a Founding Gladiator
+              Join as a Founding Titan
             </h2>
             <p className="text-center text-lg text-muted-foreground mb-8">
-              Get your custom community Faction role, early tools, and referral rewards. Join as a founding Gladiator.
+              Apply to unlock custom opportunities tailored to your group.
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
@@ -45,7 +54,7 @@ export default function Community({ showJoinModal, showPartnerForm }: CommunityP
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-neon-green mt-0.5" />
-                    <span><strong>Boosted Referral Rewards:</strong> Higher % from your community's activity</span>
+                    <span><strong>Boosted Referral Rewards:</strong> Enhanced benefits from your community's activity</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <Check className="w-5 h-5 text-neon-green mt-0.5" />
@@ -77,33 +86,20 @@ export default function Community({ showJoinModal, showPartnerForm }: CommunityP
               </div>
             </div>
             
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <Button size="lg" className="bg-gradient-to-r from-neon-purple to-neon-cyan" onClick={showPartnerForm}>
                 <Users className="w-5 h-5 mr-2" /> Apply as a Partner Community
               </Button>
+              <p className="text-sm text-muted-foreground italic">
+                Applications are confidential, and we'll discuss details privately to align with your plans.
+              </p>
             </div>
           </div>
 
-          <div className="bg-card/60 border border-card-border rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-center mb-6">Partner Benefits Breakdown</h3>
-            <div className="space-y-4">
-              <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-neon-green mt-0.5" />
-                <span><strong>Custom Discord Faction Role:</strong> Your community gets a unique, branded role in our Discord</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-neon-green mt-0.5" />
-                <span><strong>Referral Dashboard:</strong> Track your community's activity and earnings in real-time</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-neon-green mt-0.5" />
-                <span><strong>Lifetime Pro Access:</strong> Premium tools, private bets, analytics</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <Check className="w-5 h-5 text-neon-green mt-0.5" />
-                <span><strong>Airdrop Priority:</strong> Reserved $ARENA allocation for top Factions</span>
-              </div>
-            </div>
+          <div className="bg-card/60 border border-card-border rounded-xl p-6 sm:p-8 text-center">
+            <p className="text-sm text-muted-foreground">
+              <strong>Note:</strong> All partnerships respect our disclaimer. Check it out for full transparency.
+            </p>
           </div>
         </div>
       </section>
