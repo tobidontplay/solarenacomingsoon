@@ -2,47 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CYBERPUNK THEME - SOLARENA */
+/* CYBERPUNK THEME - SOLARENA - LIGHT MODE */
 :root {
-  --button-outline: rgba(168, 85, 247, .20);
-  --badge-outline: rgba(168, 85, 247, .10);
+  --button-outline: rgba(168, 85, 247, .15);
+  --badge-outline: rgba(168, 85, 247, .08);
   --opaque-button-border-intensity: 8;
-  --elevate-1: rgba(168, 85, 247, .08);
-  --elevate-2: rgba(168, 85, 247, .15);
-  --background: 240 8% 6%;
-  --foreground: 0 0% 100%;
-  --border: 271 50% 25%;
-  --card: 240 6% 10%;
-  --card-foreground: 0 0% 100%;
-  --card-border: 271 60% 35%;
-  --sidebar: 240 7% 8%;
-  --sidebar-foreground: 0 0% 100%;
-  --sidebar-border: 271 50% 25%;
-  --sidebar-primary: 271 70% 60%;
+  --elevate-1: rgba(168, 85, 247, .05);
+  --elevate-2: rgba(168, 85, 247, .10);
+  --background: 0 0% 99%;
+  --foreground: 240 10% 8%;
+  --border: 271 25% 80%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 8%;
+  --card-border: 271 35% 75%;
+  --sidebar: 0 0% 97%;
+  --sidebar-foreground: 240 10% 10%;
+  --sidebar-border: 271 30% 75%;
+  --sidebar-primary: 271 70% 55%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 271 40% 20%;
-  --sidebar-accent-foreground: 0 0% 100%;
-  --sidebar-ring: 271 70% 60%;
-  --popover: 240 6% 12%;
-  --popover-foreground: 0 0% 100%;
-  --popover-border: 271 50% 30%;
-  --primary: 271 70% 60%;
+  --sidebar-accent: 271 20% 92%;
+  --sidebar-accent-foreground: 240 10% 10%;
+  --sidebar-ring: 271 70% 55%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 10%;
+  --popover-border: 271 30% 80%;
+  --primary: 271 70% 55%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 189 70% 50%;
+  --secondary: 189 70% 45%;
   --secondary-foreground: 0 0% 100%;
-  --muted: 240 5% 20%;
-  --muted-foreground: 0 0% 65%;
-  --accent: 189 70% 50%;
+  --muted: 240 10% 95%;
+  --muted-foreground: 240 5% 35%;
+  --accent: 189 70% 45%;
   --accent-foreground: 0 0% 100%;
-  --destructive: 328 70% 55%;
+  --destructive: 328 70% 50%;
   --destructive-foreground: 0 0% 100%;
-  --input: 240 5% 25%;
-  --ring: 271 70% 60%;
-  --neon-purple: 271 70% 60%;
-  --neon-cyan: 189 70% 50%;
-  --neon-pink: 328 70% 55%;
-  --neon-green: 158 70% 45%;
-  --neon-amber: 38 90% 50%;
+  --input: 240 10% 94%;
+  --ring: 271 70% 55%;
+  --neon-purple: 271 70% 55%;
+  --neon-cyan: 189 70% 45%;
+  --neon-pink: 328 70% 50%;
+  --neon-green: 158 70% 40%;
+  --neon-amber: 38 90% 45%;
   --chart-1: 271 70% 60%;
   --chart-2: 189 70% 50%;
   --chart-3: 328 70% 55%;
@@ -328,12 +328,43 @@
 
   .bg-grid-pattern {
     background-image: 
+      linear-gradient(to right, rgba(168, 85, 247, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(168, 85, 247, 0.08) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .dark .bg-grid-pattern {
+    background-image: 
       linear-gradient(to right, rgba(168, 85, 247, 0.1) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(168, 85, 247, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
   }
 
   .drop-shadow-neon-purple {
     filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.5));
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    /* Improve touch targets */
+    button, a {
+      min-height: 44px;
+    }
+    
+    /* Better text rendering on mobile */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    
+    /* Prevent text size adjustment on orientation change */
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+    
+    /* Smoother scrolling on mobile */
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 }
