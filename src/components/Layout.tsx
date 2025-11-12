@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Send, ExternalLink, Menu, X, Zap } from "lucide-react";
+import { MessageCircle, Send, ExternalLink, Zap, Home, HelpCircle, Coins, Users } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import { useState } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 interface LayoutProps {
@@ -11,14 +10,13 @@ interface LayoutProps {
 
 export default function Layout({ children, showJoinModal }: LayoutProps) {
   const [location] = useLocation();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/how-it-works", label: "How It Works" },
-    { href: "/token", label: "$ARENA & Points" },
-    { href: "/community", label: "Community" },
-    { href: "/faq", label: "FAQ" },
+    { href: "/", label: "Home", icon: Home },
+    { href: "/how-it-works", label: "How It Works", icon: Zap },
+    { href: "/token", label: "$ARENA & Points", icon: Coins },
+    { href: "/community", label: "Community", icon: Users },
+    { href: "/faq", label: "FAQ", icon: HelpCircle },
   ];
 
   return (
@@ -34,8 +32,8 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
               {/* Logo */}
               <Link href="/">
                 <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <img src="/logo.png" alt="SolArena" className="w-10 h-10 object-contain" />
-                  <span className="font-bold text-xl bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+                  <img src="/fulllogo.png" alt="SolArena" className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+                  <span className="font-bold text-lg sm:text-xl bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
                     SOLARENA
                   </span>
                 </a>
@@ -64,53 +62,16 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
                 </Button>
               </nav>
 
-              {/* Mobile Menu Button & Theme Toggle */}
-              <div className="md:hidden flex items-center gap-2">
+              {/* Mobile Theme Toggle Only */}
+              <div className="md:hidden">
                 <ThemeToggle />
-                <button
-                  className="p-2 hover:bg-card/50 rounded-lg transition-colors"
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                >
-                  {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                </button>
               </div>
             </div>
-
-            {/* Mobile Navigation */}
-            {mobileMenuOpen && (
-              <nav className="md:hidden py-4 border-t border-card-border">
-                <div className="flex flex-col gap-3">
-                  {navLinks.map((link) => (
-                    <Link key={link.href} href={link.href}>
-                      <a
-                        className={`block px-4 py-2 rounded-lg transition-colors ${
-                          location === link.href
-                            ? "bg-neon-cyan/10 text-neon-cyan"
-                            : "text-muted-foreground hover:bg-card/50"
-                        }`}
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {link.label}
-                      </a>
-                    </Link>
-                  ))}
-                  <Button
-                    className="bg-gradient-to-r from-neon-purple to-neon-cyan"
-                    onClick={() => {
-                      showJoinModal();
-                      setMobileMenuOpen(false);
-                    }}
-                  >
-                    <Zap className="w-4 h-4 mr-2" /> Join Arena
-                  </Button>
-                </div>
-              </nav>
-            )}
           </div>
         </header>
 
         {/* Main Content */}
-        <main>{children}</main>
+        <main className="pb-20 md:pb-0">{children}</main>
 
         {/* Footer */}
         <footer className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 border-t border-card-border">
@@ -200,6 +161,34 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
             </div>
           </div>
         </footer>
+
+        {/* Mobile Bottom Navigation */}
+        <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-card-border">
+          <div className="grid grid-cols-5 h-16">
+            {navLinks.map((link) => {
+              const Icon = link.icon;
+              const isActive = location === link.href;
+              return (
+                <Link key={link.href} href={link.href}>
+                  <a
+                    className={`flex flex-col items-center justify-center h-full transition-colors ${
+                      isActive
+                        ? "text-neon-cyan"
+                        : "text-muted-foreground hover:text-foreground"
+                    }`}
+                  >
+                    <Icon className={`w-5 h-5 mb-1 ${
+                      isActive ? "text-neon-cyan" : ""
+                    }`} />
+                    <span className="text-[10px] font-medium">
+                      {link.label === "How It Works" ? "How" : link.label === "$ARENA & Points" ? "Token" : link.label}
+                    </span>
+                  </a>
+                </Link>
+              );
+            })}
+          </div>
+        </nav>
       </div>
     </div>
   );
