@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Send, ExternalLink, Zap, Home, HelpCircle, Coins, Users } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { useEffect } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
 
 interface LayoutProps {
@@ -10,6 +11,11 @@ interface LayoutProps {
 
 export default function Layout({ children, showJoinModal }: LayoutProps) {
   const [location] = useLocation();
+
+  // Scroll to top whenever route changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location]);
 
   const navLinks = [
     { href: "/", label: "Home", icon: Home },
@@ -79,11 +85,13 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
               {/* Brand */}
               <div className="space-y-4">
-                <Link href="/" className="flex items-center gap-2">
-                  <img src="/logo.png" alt="SolArena" className="w-10 h-10 object-contain" />
-                  <span className="font-display font-bold text-xl bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
-                    SOLARENA
-                  </span>
+                <Link href="/">
+                  <a className="flex items-center gap-2">
+                    <img src="/logo.png" alt="SolArena" className="w-10 h-10 object-contain" />
+                    <span className="font-display font-bold text-xl bg-gradient-to-r from-neon-purple to-neon-cyan bg-clip-text text-transparent">
+                      SOLARENA
+                    </span>
+                  </a>
                 </Link>
                 <p className="text-sm text-muted-foreground">
                   Where speculation becomes sport. Built on Solana.
@@ -157,7 +165,7 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
             <div className="border-t border-card-border pt-8 text-center space-y-2">
               <p className="text-sm text-muted-foreground">Built with ⚡ on Solana</p>
               <p className="text-xs text-muted-foreground/70 italic">"Where speculation becomes sport."</p>
-              <p className="text-xs text-muted-foreground/50">© 2025 SolArena Labs. All rights reserved.</p>
+              <p className="text-xs text-muted-foreground/50"> 2025 SolArena Labs. All rights reserved.</p>
             </div>
           </div>
         </footer>
