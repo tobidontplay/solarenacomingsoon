@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Send, ExternalLink, Zap, Home, HelpCircle, Coins, Users } from "lucide-react";
+import { MessageCircle, Send, ExternalLink, Zap, Home, HelpCircle, Coins, Users, Book } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -21,6 +21,7 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
     { href: "/", label: "Home", icon: Home },
     { href: "/how-it-works", label: "How It Works", icon: Zap },
     { href: "/token", label: "$ARENA & Points", icon: Coins },
+    { href: "/library", label: "Library", icon: Book },
     { href: "/community", label: "Community", icon: Users },
     { href: "/faq", label: "FAQ", icon: HelpCircle },
   ];
@@ -182,7 +183,7 @@ export default function Layout({ children, showJoinModal }: LayoutProps) {
 
         {/* Mobile Bottom Navigation */}
         <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-t border-card-border">
-          <div className="grid grid-cols-5 h-16">
+          <div className="grid grid-cols-6 h-16">
             {navLinks.map((link) => {
               const Icon = link.icon;
               const isActive = location === link.href;

@@ -5,6 +5,27 @@ import HowItWorks from "./pages/HowItWorks";
 import Token from "./pages/Token";
 import Community from "./pages/Community";
 import FAQ from "./pages/FAQ";
+import Library from "./pages/Library";
+import WhatIsSolArena from "./pages/library/WhatIsSolArena";
+import QuickStart from "./pages/library/QuickStart";
+import EarnArenaPoints from "./pages/library/EarnArenaPoints";
+import ArenaToken from "./pages/library/ArenaToken";
+import ArenaPoints from "./pages/library/ArenaPoints";
+import AirdropEligibility from "./pages/library/AirdropEligibility";
+import FoundingTitans from "./pages/library/FoundingTitans";
+import TitanPerks from "./pages/library/TitanPerks";
+import ReferralStructure from "./pages/library/ReferralStructure";
+import SmartContracts from "./pages/library/SmartContracts";
+import SecurityAudits from "./pages/library/SecurityAudits";
+import Resolutions from "./pages/library/Resolutions";
+import Governance from "./pages/library/Governance";
+import TreasuryDAO from "./pages/library/TreasuryDAO";
+import Roadmap from "./pages/library/Roadmap";
+import Terms from "./pages/library/Terms";
+import RiskDisclosure from "./pages/library/RiskDisclosure";
+import RegionalRestrictions from "./pages/library/RegionalRestrictions";
+import PressOverview from "./pages/library/PressOverview";
+import SolanaPredictions from "./pages/library/SolanaPredictions";
 import Layout from "./components/Layout";
 import PartnerForm from "./components/PartnerForm";
 import { Toaster } from "@/components/ui/toaster";
@@ -26,6 +47,27 @@ function App() {
           <Route path="/token" component={() => <Token showJoinModal={() => setShowJoinModal(true)} />} />
           <Route path="/community" component={() => <Community showJoinModal={() => setShowJoinModal(true)} showPartnerForm={() => setShowPartnerForm(true)} />} />
           <Route path="/faq" component={() => <FAQ />} />
+          <Route path="/library" component={() => <Library />} />
+          <Route path="/library/what-is-solarena" component={() => <WhatIsSolArena />} />
+          <Route path="/library/quick-start" component={() => <QuickStart />} />
+          <Route path="/library/earn-arena-points" component={() => <EarnArenaPoints />} />
+          <Route path="/library/arena-token" component={() => <ArenaToken />} />
+          <Route path="/library/arena-points" component={() => <ArenaPoints />} />
+          <Route path="/library/airdrop-eligibility" component={() => <AirdropEligibility />} />
+          <Route path="/library/founding-titans" component={() => <FoundingTitans />} />
+          <Route path="/library/titan-perks" component={() => <TitanPerks />} />
+          <Route path="/library/referral-structure" component={() => <ReferralStructure />} />
+          <Route path="/library/smart-contracts" component={() => <SmartContracts />} />
+          <Route path="/library/security-audits" component={() => <SecurityAudits />} />
+          <Route path="/library/resolutions" component={() => <Resolutions />} />
+          <Route path="/library/governance" component={() => <Governance />} />
+          <Route path="/library/treasury-dao" component={() => <TreasuryDAO />} />
+          <Route path="/library/roadmap" component={() => <Roadmap />} />
+          <Route path="/library/terms" component={() => <Terms />} />
+          <Route path="/library/risk-disclosure" component={() => <RiskDisclosure />} />
+          <Route path="/library/regional-restrictions" component={() => <RegionalRestrictions />} />
+          <Route path="/library/press-overview" component={() => <PressOverview />} />
+          <Route path="/library/solana-predictions" component={() => <SolanaPredictions />} />
         </Switch>
       </Layout>
 
