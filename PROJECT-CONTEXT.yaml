@@ -1,0 +1,508 @@
+# Ariadne project context. analysis_version 1.
+# Unknowns are null. They are not omitted.
+# Weights use HIGH, MED, or LOW. Confidence uses high, medium, or low.
+# Status uses done, partial, broken, planned, or absent.
+# This file describes the repo. It does not change project.yaml.
+
+analysis_version: 1
+last_analysis: "2026-10-01"
+confidence: medium
+stage: temporary-brochure
+maturity: content-complete-unverified
+
+project:
+  name: solarenacomingsoon
+  package_name: solarena-landing
+  package_version: "1.0.0"
+  repo: tobidontplay/solarenacomingsoon
+  url: https://github.com/tobidontplay/solarenacomingsoon
+  visibility: public
+  default_branch: main
+  description: temp landing page
+  homepage: null
+  owner_github: tobidontplay
+  product_repo_named_in_adr: tobidontplay/SOLArena
+  commit_count: 21
+  head_sha: 2caf922186540900cf3bb7a915b2899ba0bc670a
+  last_app_commit_date: "2025-11-12"
+  last_commit_date: "2026-09-26"
+  license_file: null
+
+purpose: >
+  Public brochure for SolArena. It explains a peer-to-peer prediction
+  protocol, a points and token story, a library of articles, and a
+  Founding Titan application. The on-chain program is not in this repo.
+  The GitHub description still says temp landing page.
+
+goals:
+  - id: G1
+    kind: stated
+    statement: Explain the arena, the token, and the rules before the app is the main surface.
+    source: specs/project-brief.md
+    status: partial
+    weight: HIGH
+  - id: G2
+    kind: stated
+    statement: Keep this checkout as the brochure. Leave the program in SOLArena.
+    source: docs/architecture/decisions/001-keep-temp-landing.md
+    status: done
+    weight: HIGH
+  - id: G3
+    kind: stated
+    statement: A partner can submit the form and the owner can read it.
+    source: specs/features/002-partner-form.md
+    status: partial
+    weight: HIGH
+  - id: G4
+    kind: stated
+    statement: Speak as a prediction protocol rather than a gambling site.
+    source: commit d0b2d6f
+    status: partial
+    weight: HIGH
+  - id: G5
+    kind: stated
+    statement: Publish a library of pre-launch articles.
+    source: commit 00ceb0b
+    status: done
+    weight: MED
+  - id: G6
+    kind: stated
+    statement: Deep links survive refresh on the static host.
+    source: netlify.toml
+    status: partial
+    weight: HIGH
+  - id: G7
+    kind: stated
+    statement: The owner keeps the site or archives it. The docs do not decide.
+    source: TODO.md
+    status: planned
+    weight: HIGH
+  - id: G8
+    kind: stated
+    statement: A test suite is out of scope for the project brief.
+    source: specs/project-brief.md
+    status: done
+    weight: MED
+  - id: I1
+    kind: inferred
+    statement: Join the Arena currently means join the socials, not open a product URL.
+    source: src/App.tsx
+    status: partial
+    weight: HIGH
+  - id: I2
+    kind: inferred
+    statement: Collect up to ten confidential Founding Titan applications.
+    source: src/pages/Community.tsx
+    status: partial
+    weight: MED
+
+capabilities:
+  - id: multipage-shell
+    name: Multi-page shell
+    status: done
+    weight: HIGH
+    confidence: high
+    evidence: src/App.tsx
+    notes: Six top-level routes and twenty library routes. Not executed in a browser.
+  - id: layout-footer
+    name: Shared layout and legal footer
+    status: done
+    weight: HIGH
+    confidence: high
+    evidence: src/components/Layout.tsx
+    notes: Footer disclaimer does not match index.html description.
+  - id: mobile-nav
+    name: Mobile bottom navigation
+    status: done
+    weight: MED
+    confidence: high
+    evidence: src/components/Layout.tsx
+    notes: null
+  - id: join-modal
+    name: Join modal
+    status: done
+    weight: HIGH
+    confidence: high
+    evidence: src/App.tsx
+    notes: Social links only. No product URL.
+  - id: theme
+    name: Theme persistence
+    status: partial
+    weight: MED
+    confidence: high
+    evidence: src/components/ThemeToggle.tsx
+    notes: localStorage after mount. First paint is the light :root palette.
+  - id: brand-fonts
+    name: Brand fonts
+    status: broken
+    weight: MED
+    confidence: high
+    evidence: tailwind.config.ts
+    notes: Orbitron, Rajdhani, and Space Mono are named and never loaded.
+  - id: library
+    name: Library index and articles
+    status: done
+    weight: HIGH
+    confidence: high
+    evidence: src/pages/Library.tsx
+    notes: Twenty slugs match twenty routes.
+  - id: yes-no-explainer
+    name: Interactive YES/NO explainer
+    status: done
+    weight: MED
+    confidence: high
+    evidence: src/pages/HowItWorks.tsx
+    notes: Local state only.
+  - id: partner-form-ui
+    name: Partner form UI
+    status: done
+    weight: HIGH
+    confidence: high
+    evidence: src/components/PartnerForm.tsx
+    notes: null
+  - id: partner-form-delivery
+    name: Partner form delivery
+    status: partial
+    weight: HIGH
+    confidence: high
+    evidence: src/components/PartnerForm.tsx
+    notes: POST target is known. Inbox receipt was not tested. FORM_SETUP.md is stale.
+  - id: demo-video
+    name: Demo video on the live home
+    status: absent
+    weight: MED
+    confidence: high
+    evidence: public/demo-video.mp4
+    notes: Referenced only by unmounted Landing files.
+  - id: progress-checklist
+    name: Public progress checklist
+    status: absent
+    weight: MED
+    confidence: high
+    evidence: src/pages/Landing.tsx
+    notes: Checklist is not mounted.
+  - id: wallet-connect
+    name: Wallet connect
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: package.json
+    notes: FAQ and Quick Start describe it anyway.
+  - id: prediction-markets
+    name: Prediction markets
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: package.json
+    notes: null
+  - id: arena-points
+    name: Arena Points ledger
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: src/pages/library/EarnArenaPoints.tsx
+    notes: Copy only. One article says Phase 1 is live.
+  - id: arena-token
+    name: $ARENA token
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: src/pages/library/ArenaToken.tsx
+    notes: Article says the token is not live.
+  - id: not-found
+    name: Unknown-route page
+    status: absent
+    weight: MED
+    confidence: high
+    evidence: src/App.tsx
+    notes: Switch returns null. Chrome remains.
+  - id: spa-fallback
+    name: SPA refresh fallback
+    status: partial
+    weight: HIGH
+    confidence: high
+    evidence: netlify.toml
+    notes: Netlify only. No vercel.json. Live host is null.
+  - id: search
+    name: Search
+    status: absent
+    weight: LOW
+    confidence: high
+    evidence: src
+    notes: null
+  - id: auth
+    name: Auth
+    status: absent
+    weight: MED
+    confidence: high
+    evidence: package.json
+    notes: Clerk is named only in unmounted Landing.tsx.
+  - id: tests
+    name: Tests
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: package.json
+    notes: Brief lists a test suite as out of scope. Agent rules ask for tests.
+  - id: verification-log
+    name: Recorded verification
+    status: absent
+    weight: HIGH
+    confidence: high
+    evidence: docs/verification.md
+    notes: feat-001 status Done with verified_by null.
+  - id: toasts
+    name: Toast notifications
+    status: absent
+    weight: LOW
+    confidence: high
+    evidence: src/hooks/use-toast.ts
+    notes: Toaster is mounted. toast() has no caller.
+
+stack:
+  language: TypeScript
+  ui: React 18
+  bundler: Vite 5
+  router: wouter 3.3.5
+  styling:
+    - Tailwind CSS 3
+    - tailwindcss-animate
+    - "@tailwindcss/typography"
+  primitives:
+    - "@radix-ui/react-slot"
+    - "@radix-ui/react-toast"
+    - "@radix-ui/react-tooltip"
+  icons: lucide-react
+  host_config:
+    - Netlify
+  host_documented_without_config:
+    - Vercel
+  host_confirmed: null
+  package_manager: npm
+  lockfile: null
+  test_runner: null
+  linter: null
+  ci: null
+  dev_port: null
+  node_version_pinned: null
+
+architecture:
+  style: static-spa
+  entry: src/main.tsx
+  router_file: src/App.tsx
+  layout: src/components/Layout.tsx
+  live_home: src/pages/Home.tsx
+  unmounted_home: src/pages/Landing.tsx
+  article_count: 20
+  top_level_route_count: 6
+  data: react-components
+  database: null
+  first_party_api: null
+  persistence:
+    - localStorage key theme
+  write_path: POST https://api.web3forms.com/submit
+  chain_client: null
+
+risks:
+  - id: R1
+    severity: HIGH
+    confidence: high
+    claim: Getting-started copy tells visitors to connect a wallet and stake. This origin cannot do that.
+    evidence: src/pages/FAQ.tsx
+  - id: R2
+    severity: HIGH
+    confidence: high
+    claim: Audit and launch sentences on live pages contradict each other. No audit artifact is in the tree.
+    evidence: src/pages/Home.tsx
+  - id: R3
+    severity: HIGH
+    confidence: high
+    claim: README, architecture overview, and FORM_SETUP.md describe a different tree than the router.
+    evidence: README.md
+  - id: R4
+    severity: HIGH
+    confidence: high
+    claim: Partner delivery is unproven, and a Web3Forms access key is hardcoded in client source.
+    evidence: src/components/PartnerForm.tsx
+  - id: R5
+    severity: HIGH
+    confidence: high
+    claim: Refresh safety depends on a host the repo does not name. Only Netlify has a rewrite.
+    evidence: netlify.toml
+  - id: R6
+    severity: MED
+    confidence: high
+    claim: wouter Link renders an anchor. Call sites nest another anchor or a button. Clicks were not executed.
+    evidence: src/components/Layout.tsx
+  - id: R7
+    severity: MED
+    confidence: high
+    claim: Named display fonts are never requested.
+    evidence: index.html
+  - id: R8
+    severity: MED
+    confidence: high
+    claim: No lockfile and no CI. Installs float inside semver ranges.
+    evidence: package.json
+  - id: R9
+    severity: LOW
+    confidence: medium
+    claim: Library icon classes are built with string interpolation. The two color utilities also appear as full strings elsewhere. Built CSS was not inspected.
+    evidence: src/pages/Library.tsx
+
+decisions:
+  - id: D1
+    title: Document the temp landing page without calling it the product
+    source: docs/architecture/decisions/001-keep-temp-landing.md
+    status: accepted
+    date: "2026-09-25"
+  - id: D2
+    title: Use wouter for multi-page client routing
+    source: commit 069081b
+    status: accepted
+    date: "2025-11-11"
+  - id: D3
+    title: Rewrite live pages away from gambling wording
+    source: commit d0b2d6f
+    status: accepted
+    date: "2025-11-12"
+  - id: D4
+    title: Add Netlify SPA redirects
+    source: netlify.toml
+    status: accepted
+    date: "2025-11-12"
+  - id: D5
+    title: Submit partner applications with Web3Forms from the browser
+    source: src/components/PartnerForm.tsx
+    status: accepted
+    date: null
+  - id: D6
+    title: Leave verification and host choice unconfirmed
+    source: project.yaml
+    status: accepted
+    date: "2026-09-25"
+
+open_questions:
+  - id: Q1
+    question: Is this still temporary, or the site to maintain?
+    why: ADR 001 and TODO.md leave archive versus invest open.
+    weight: HIGH
+  - id: Q2
+    question: What is the production URL, and is the host Netlify or Vercel?
+    why: Refresh behavior and the README disagree until the host is named.
+    weight: HIGH
+  - id: Q3
+    question: Should Join stay a social modal or open a product URL?
+    why: README mentions /dashboard. The modal does not.
+    weight: HIGH
+  - id: Q4
+    question: Did a Web3Forms submission reach an inbox, and should the key be rotated?
+    why: The key is in the bundle. This audit did not submit the form.
+    weight: HIGH
+  - id: Q5
+    question: Which launch claims are still true in October 2026?
+    why: Audited, Phase 1 live, and Q1 2025 cannot all be used in one talk.
+    weight: HIGH
+  - id: Q6
+    question: Delete Landing.tsx, the backup, and the demo video?
+    why: They contradict the router and the legal rewrite.
+    weight: MED
+  - id: Q7
+    question: Keep the brief's no-test-suite line, or require a build row before Done?
+    why: Agent rules and the brief disagree. The verification log is empty either way.
+    weight: MED
+  - id: Q8
+    question: Remove betting and wager from index.html?
+    why: The body rewrite did not include the document head.
+    weight: MED
+
+roadmap:
+  now:
+    - id: N1
+      item: Owner confirms the temp page should stay monitored.
+      source: TODO.md
+      owner: user
+  next:
+    - id: N2
+      item: Confirm Vercel versus Netlify.
+      source: TODO.md
+      owner: user
+    - id: N3
+      item: Confirm where PartnerForm submissions arrive.
+      source: TODO.md
+      owner: user
+    - id: N4
+      item: If the site stays, record a build in docs/verification.md.
+      source: TODO.md
+      owner: agent-after-user
+  someday:
+    - id: S1
+      item: Archive the repo if the main app replaces it.
+      source: TODO.md
+      owner: user
+  not_this_repo:
+    - id: X1
+      item: On-chain program, wallet, markets, points ledger, token mint.
+      source: specs/project-brief.md
+      owner: null
+  copy_only_quarters:
+    - id: C1
+      item: Library roadmap still lists Q1 through Q4 2025. Those dates are copy, not an engineering plan for this repo.
+      source: src/pages/library/Roadmap.tsx
+      owner: null
+
+links:
+  repo: https://github.com/tobidontplay/solarenacomingsoon
+  homepage: null
+  discord: https://discord.gg/GmG6xrnUm8
+  x: https://x.com/SOLArenaLabs
+  telegram: https://t.me/+a8QoNIahl5Q5MTEx
+  x_community: https://x.com/i/communities/1986456387635806219
+  web3forms_submit: https://api.web3forms.com/submit
+  security_email: security@solarenalabs.com
+  press_email: press@solarenalabs.com
+  product_repo: null
+  audit_report: null
+  deployed_app: null
+
+teaching_hooks:
+  - id: H1
+    type: mistake
+    concept: Dead module versus dead route
+    hook: The README still describes a landing file the router never mounts.
+    source: src/pages/Landing.tsx
+  - id: H2
+    type: teaching
+    concept: Invalid nested interactive elements
+    hook: The router library already renders the anchor. Wrapping another anchor does not make a second link.
+    source: src/components/Layout.tsx
+  - id: H3
+    type: teaching
+    concept: A form component is not delivery
+    hook: The modal can close on a JSON flag you have never seen returned.
+    source: src/components/PartnerForm.tsx
+  - id: H4
+    type: decision
+    concept: Brochure repo
+    hook: The program and the brochure are different repositories on purpose.
+    source: docs/architecture/decisions/001-keep-temp-landing.md
+  - id: H5
+    type: teaching
+    concept: Done versus verified
+    hook: Frontmatter can say Done while the verification table has no rows.
+    source: docs/verification.md
+  - id: H6
+    type: bug
+    concept: Tailwind content scan
+    hook: A class name built with a template string is invisible to the stylesheet scanner.
+    source: src/pages/Library.tsx
+  - id: H7
+    type: bug
+    concept: Fonts are requests, not config
+    hook: Naming Orbitron in Tailwind does not download Orbitron.
+    source: index.html
+  - id: H8
+    type: teaching
+    concept: Copy rots
+    hook: A roadmap that still says Q1 2025 is a claim about the past, not a plan.
+    source: src/pages/library/Roadmap.tsx

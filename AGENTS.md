@@ -65,3 +65,15 @@ If this file conflicts with a direct user request, ASK before proceeding.
 - Concept mastery lives in docs/learning/concepts.md frontmatter.
 - When you complete a feature, update its frontmatter: stage, validation
   fields, verified_by. Do not mark "accepted" without user validation.
+
+## 11. Project Analysis Artifacts
+Read these before changing the site. They are an audit of the tree as of
+2026-10-01, not a feature spec and not permission to edit application code.
+- [PROJECT-STATE.md](./PROJECT-STATE.md) — facts in tables. Weight is [HIGH], [MED], or [LOW].
+- [PROJECT-GOALS.md](./PROJECT-GOALS.md) — stated and inferred goals, non-goals, questions for the owner.
+- [PROJECT-GAP.md](./PROJECT-GAP.md) — one row per capability, the three biggest gaps, and the blocking gap.
+- [PROJECT-TEACH.md](./PROJECT-TEACH.md) — mental model, decisions, failure modes. Claims are tied to files.
+- [PROJECT-CONTEXT.yaml](./PROJECT-CONTEXT.yaml) — machine-readable summary. `analysis_version: 1`. Unknowns are `null`.
+The routed home is `src/pages/Home.tsx`. `src/pages/Landing.tsx` is not mounted.
+Marketing copy is not evidence that a wallet, a market, or an audit exists in this repo.
+Do not paste the Web3Forms access key into new documents.
